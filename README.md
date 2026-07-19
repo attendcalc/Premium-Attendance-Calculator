@@ -18,7 +18,9 @@ Falling short of the required attendance can lead to:
 
 To stay eligible, your attendance percentage needs to meet:
 
+```
 (Classes Attended ÷ Total Classes) × 100 ≥ Required Percentage
+```
 
 Skipping classes early in the semester makes it harder to recover later.
 
