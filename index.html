@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Attendance Calculator</title>
+    <meta name="description" content="Calculate your class attendance percentage and goals effortlessly with this beautifully designed premium calculator.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <main class="calculator-container">
+        <header class="calc-header">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h1>Premium Attendance Calculator</h1>
+            <p>Track your presence, achieve your goals.</p>
+        </header>
+
+        <form id="attendance-form" class="calc-body">
+            <div class="input-group">
+                <label for="total-classes">Total Classes Held</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-users-rectangle input-icon"></i>
+                    <input type="number" id="total-classes" min="0" placeholder="e.g. 40" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="attended-classes">Classes Attended</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user-check input-icon"></i>
+                    <input type="number" id="attended-classes" min="0" placeholder="e.g. 32" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="required-percentage">Required Percentage (%) <span class="optional">(Optional)</span></label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-percent input-icon"></i>
+                    <input type="number" id="required-percentage" min="1" max="100" placeholder="e.g. 75">
+                </div>
+            </div>
+        </form>
+
+        <div class="results-container">
+            <div class="result-card main-result">
+                <h3>Current Attendance</h3>
+                <div class="percentage-display">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle" id="percentage-circle"
+                            stroke-dasharray="0, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                    </svg>
+                    <span id="current-percentage" class="percentage-text">0%</span>
+                </div>
+                <div class="status-badge" id="status-badge">Awaiting Input</div>
+            </div>
+            
+            <div class="result-card goal-result" id="goal-container">
+                <h3>Goal Analysis</h3>
+                <p id="goal-message">Enter a required percentage to see your goal analysis.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
